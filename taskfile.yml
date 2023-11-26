@@ -1,0 +1,7 @@
+version: "3"
+
+tasks:
+  test:
+    desc: Corre los tests del proyecto
+    cmds:
+      - go test -race ./...
