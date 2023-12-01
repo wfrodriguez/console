@@ -38,12 +38,12 @@ const (
 	BrightMagenta        = 95
 	BrightCyan           = 96
 	BrightWhite          = 97
-	Reset                = 0
+	Reset                = 999
 )
 
 var colors16 []uint64 = []uint64{Black, Red, Green, Yellow, Blue, Magenta, Cyan, White}
 var styleMap = map[string]*Style{}
-var creset = Color{Size4Bit, 0, 0, nil}
+var creset = Color{Size4Bit, Reset, 0, nil}
 
 type Color struct {
 	size  ColorSize
@@ -94,18 +94,23 @@ func (c Color) IsValid() bool {
 }
 
 func (c Color) String() string {
-	switch c.size {
-	case Size4Bit:
-		return fmt.Sprintf("%s%dm", ESC, c.color)
-	case Size8Bit:
-		return fmt.Sprintf("%s%d;5;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), c.color)
-	case Size24Bit:
-		r := uint8(c.color >> 16)
-		g := uint8((c.color >> 8) & 0xFF)
-		b := uint8(c.color & 0xFF)
-		return fmt.Sprintf("%s%d;2;%d;%d;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), r, g, b)
+	if !c.IsValid() || c.color == 0 {
+		return ""
+	} else if c.color == Reset {
+		return ESC + "0m"
+	} else {
+		switch c.size {
+		case Size4Bit:
+			return fmt.Sprintf("%s%dm", ESC, c.color)
+		case Size8Bit:
+			return fmt.Sprintf("%s%d;5;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), c.color)
+		case Size24Bit:
+			r := uint8(c.color >> 16)
+			g := uint8((c.color >> 8) & 0xFF)
+			b := uint8(c.color & 0xFF)
+			return fmt.Sprintf("%s%d;2;%d;%d;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), r, g, b)
+		}
 	}
-
 	return ""
 }
 
@@ -142,14 +147,9 @@ func hex2Color(hex string) (c uint64, err error) {
 }
 
 func (s Style) String() string {
-	return s.foreground.String() + s.background.String() + string(s.dim) + string(s.italic) + string(s.underline) +
+	str := s.foreground.String() + s.background.String() + string(s.dim) + string(s.italic) + string(s.underline) +
 		string(s.blinking) + string(s.reverse) + string(s.hidden) + string(s.strike)
-}
-
-func init() {
-	reset := NewStyle(WithForeground(creset))
-	AddStyle("reset", reset)
-	AddStyle("/", reset)
+	return str
 }
 
 // NewStyle crea una nueva instancia de Style
