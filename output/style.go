@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/wfrodriguez/console/util"
 )
 
 type ColorSize uint8
@@ -54,7 +56,7 @@ type Color struct {
 
 func New16Color(c uint64, t Typo) Color {
 	if contains(colors16, c) {
-		return Color{Size4Bit, ternaryIf(t == Background, c+10, c), t, nil}
+		return Color{Size4Bit, util.TernaryIf(t == Background, c+10, c), t, nil}
 	}
 
 	return Color{Size4Bit, 0, 0, fmt.Errorf("Color %d no es un color válido de 4 bits", c)}
@@ -103,12 +105,12 @@ func (c Color) String() string {
 		case Size4Bit:
 			return fmt.Sprintf("%s%dm", ESC, c.color)
 		case Size8Bit:
-			return fmt.Sprintf("%s%d;5;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), c.color)
+			return fmt.Sprintf("%s%d;5;%dm", ESC, util.TernaryIf(c.typo == Foreground, 38, 48), c.color)
 		case Size24Bit:
 			r := uint8(c.color >> 16)
 			g := uint8((c.color >> 8) & 0xFF)
 			b := uint8(c.color & 0xFF)
-			return fmt.Sprintf("%s%d;2;%d;%d;%dm", ESC, ternaryIf(c.typo == Foreground, 38, 48), r, g, b)
+			return fmt.Sprintf("%s%d;2;%d;%d;%dm", ESC, util.TernaryIf(c.typo == Foreground, 38, 48), r, g, b)
 		}
 	}
 	return ""
