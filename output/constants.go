@@ -19,675 +19,417 @@ const (
 	Strike    Text = "9"
 )
 
-// // 256 Xterm colours
-// const ( // {{{
-// 	Colour0   Color = "0"
-// 	Colour1   Color = "1"
-// 	Colour2   Color = "2"
-// 	Colour3   Color = "3"
-// 	Colour4   Color = "4"
-// 	Colour5   Color = "5"
-// 	Colour6   Color = "6"
-// 	Colour7   Color = "7"
-// 	Colour8   Color = "8"
-// 	Colour9   Color = "9"
-// 	Colour10  Color = "10"
-// 	Colour11  Color = "11"
-// 	Colour12  Color = "12"
-// 	Colour13  Color = "13"
-// 	Colour14  Color = "14"
-// 	Colour15  Color = "15"
-// 	Colour16  Color = "16"
-// 	Colour17  Color = "17"
-// 	Colour18  Color = "18"
-// 	Colour19  Color = "19"
-// 	Colour20  Color = "20"
-// 	Colour21  Color = "21"
-// 	Colour22  Color = "22"
-// 	Colour23  Color = "23"
-// 	Colour24  Color = "24"
-// 	Colour25  Color = "25"
-// 	Colour26  Color = "26"
-// 	Colour27  Color = "27"
-// 	Colour28  Color = "28"
-// 	Colour29  Color = "29"
-// 	Colour30  Color = "30"
-// 	Colour31  Color = "31"
-// 	Colour32  Color = "32"
-// 	Colour33  Color = "33"
-// 	Colour34  Color = "34"
-// 	Colour35  Color = "35"
-// 	Colour36  Color = "36"
-// 	Colour37  Color = "37"
-// 	Colour38  Color = "38"
-// 	Colour39  Color = "39"
-// 	Colour40  Color = "40"
-// 	Colour41  Color = "41"
-// 	Colour42  Color = "42"
-// 	Colour43  Color = "43"
-// 	Colour44  Color = "44"
-// 	Colour45  Color = "45"
-// 	Colour46  Color = "46"
-// 	Colour47  Color = "47"
-// 	Colour48  Color = "48"
-// 	Colour49  Color = "49"
-// 	Colour50  Color = "50"
-// 	Colour51  Color = "51"
-// 	Colour52  Color = "52"
-// 	Colour53  Color = "53"
-// 	Colour54  Color = "54"
-// 	Colour55  Color = "55"
-// 	Colour56  Color = "56"
-// 	Colour57  Color = "57"
-// 	Colour58  Color = "58"
-// 	Colour59  Color = "59"
-// 	Colour60  Color = "60"
-// 	Colour61  Color = "61"
-// 	Colour62  Color = "62"
-// 	Colour63  Color = "63"
-// 	Colour64  Color = "64"
-// 	Colour65  Color = "65"
-// 	Colour66  Color = "66"
-// 	Colour67  Color = "67"
-// 	Colour68  Color = "68"
-// 	Colour69  Color = "69"
-// 	Colour70  Color = "70"
-// 	Colour71  Color = "71"
-// 	Colour72  Color = "72"
-// 	Colour73  Color = "73"
-// 	Colour74  Color = "74"
-// 	Colour75  Color = "75"
-// 	Colour76  Color = "76"
-// 	Colour77  Color = "77"
-// 	Colour78  Color = "78"
-// 	Colour79  Color = "79"
-// 	Colour80  Color = "80"
-// 	Colour81  Color = "81"
-// 	Colour82  Color = "82"
-// 	Colour83  Color = "83"
-// 	Colour84  Color = "84"
-// 	Colour85  Color = "85"
-// 	Colour86  Color = "86"
-// 	Colour87  Color = "87"
-// 	Colour88  Color = "88"
-// 	Colour89  Color = "89"
-// 	Colour90  Color = "90"
-// 	Colour91  Color = "91"
-// 	Colour92  Color = "92"
-// 	Colour93  Color = "93"
-// 	Colour94  Color = "94"
-// 	Colour95  Color = "95"
-// 	Colour96  Color = "96"
-// 	Colour97  Color = "97"
-// 	Colour98  Color = "98"
-// 	Colour99  Color = "99"
-// 	Colour100 Color = "100"
-// 	Colour101 Color = "101"
-// 	Colour102 Color = "102"
-// 	Colour103 Color = "103"
-// 	Colour104 Color = "104"
-// 	Colour105 Color = "105"
-// 	Colour106 Color = "106"
-// 	Colour107 Color = "107"
-// 	Colour108 Color = "108"
-// 	Colour109 Color = "109"
-// 	Colour110 Color = "110"
-// 	Colour111 Color = "111"
-// 	Colour112 Color = "112"
-// 	Colour113 Color = "113"
-// 	Colour114 Color = "114"
-// 	Colour115 Color = "115"
-// 	Colour116 Color = "116"
-// 	Colour117 Color = "117"
-// 	Colour118 Color = "118"
-// 	Colour119 Color = "119"
-// 	Colour120 Color = "120"
-// 	Colour121 Color = "121"
-// 	Colour122 Color = "122"
-// 	Colour123 Color = "123"
-// 	Colour124 Color = "124"
-// 	Colour125 Color = "125"
-// 	Colour126 Color = "126"
-// 	Colour127 Color = "127"
-// 	Colour128 Color = "128"
-// 	Colour129 Color = "129"
-// 	Colour130 Color = "130"
-// 	Colour131 Color = "131"
-// 	Colour132 Color = "132"
-// 	Colour133 Color = "133"
-// 	Colour134 Color = "134"
-// 	Colour135 Color = "135"
-// 	Colour136 Color = "136"
-// 	Colour137 Color = "137"
-// 	Colour138 Color = "138"
-// 	Colour139 Color = "139"
-// 	Colour140 Color = "140"
-// 	Colour141 Color = "141"
-// 	Colour142 Color = "142"
-// 	Colour143 Color = "143"
-// 	Colour144 Color = "144"
-// 	Colour145 Color = "145"
-// 	Colour146 Color = "146"
-// 	Colour147 Color = "147"
-// 	Colour148 Color = "148"
-// 	Colour149 Color = "149"
-// 	Colour150 Color = "150"
-// 	Colour151 Color = "151"
-// 	Colour152 Color = "152"
-// 	Colour153 Color = "153"
-// 	Colour154 Color = "154"
-// 	Colour155 Color = "155"
-// 	Colour156 Color = "156"
-// 	Colour157 Color = "157"
-// 	Colour158 Color = "158"
-// 	Colour159 Color = "159"
-// 	Colour160 Color = "160"
-// 	Colour161 Color = "161"
-// 	Colour162 Color = "162"
-// 	Colour163 Color = "163"
-// 	Colour164 Color = "164"
-// 	Colour165 Color = "165"
-// 	Colour166 Color = "166"
-// 	Colour167 Color = "167"
-// 	Colour168 Color = "168"
-// 	Colour169 Color = "169"
-// 	Colour170 Color = "170"
-// 	Colour171 Color = "171"
-// 	Colour172 Color = "172"
-// 	Colour173 Color = "173"
-// 	Colour174 Color = "174"
-// 	Colour175 Color = "175"
-// 	Colour176 Color = "176"
-// 	Colour177 Color = "177"
-// 	Colour178 Color = "178"
-// 	Colour179 Color = "179"
-// 	Colour180 Color = "180"
-// 	Colour181 Color = "181"
-// 	Colour182 Color = "182"
-// 	Colour183 Color = "183"
-// 	Colour184 Color = "184"
-// 	Colour185 Color = "185"
-// 	Colour186 Color = "186"
-// 	Colour187 Color = "187"
-// 	Colour188 Color = "188"
-// 	Colour189 Color = "189"
-// 	Colour190 Color = "190"
-// 	Colour191 Color = "191"
-// 	Colour192 Color = "192"
-// 	Colour193 Color = "193"
-// 	Colour194 Color = "194"
-// 	Colour195 Color = "195"
-// 	Colour196 Color = "196"
-// 	Colour197 Color = "197"
-// 	Colour198 Color = "198"
-// 	Colour199 Color = "199"
-// 	Colour200 Color = "200"
-// 	Colour201 Color = "201"
-// 	Colour202 Color = "202"
-// 	Colour203 Color = "203"
-// 	Colour204 Color = "204"
-// 	Colour205 Color = "205"
-// 	Colour206 Color = "206"
-// 	Colour207 Color = "207"
-// 	Colour208 Color = "208"
-// 	Colour209 Color = "209"
-// 	Colour210 Color = "210"
-// 	Colour211 Color = "211"
-// 	Colour212 Color = "212"
-// 	Colour213 Color = "213"
-// 	Colour214 Color = "214"
-// 	Colour215 Color = "215"
-// 	Colour216 Color = "216"
-// 	Colour217 Color = "217"
-// 	Colour218 Color = "218"
-// 	Colour219 Color = "219"
-// 	Colour220 Color = "220"
-// 	Colour221 Color = "221"
-// 	Colour222 Color = "222"
-// 	Colour223 Color = "223"
-// 	Colour224 Color = "224"
-// 	Colour225 Color = "225"
-// 	Colour226 Color = "226"
-// 	Colour227 Color = "227"
-// 	Colour228 Color = "228"
-// 	Colour229 Color = "229"
-// 	Colour230 Color = "230"
-// 	Colour231 Color = "231"
-// 	Colour232 Color = "232"
-// 	Colour233 Color = "233"
-// 	Colour234 Color = "234"
-// 	Colour235 Color = "235"
-// 	Colour236 Color = "236"
-// 	Colour237 Color = "237"
-// 	Colour238 Color = "238"
-// 	Colour239 Color = "239"
-// 	Colour240 Color = "240"
-// 	Colour241 Color = "241"
-// 	Colour242 Color = "242"
-// 	Colour243 Color = "243"
-// 	Colour244 Color = "244"
-// 	Colour245 Color = "245"
-// 	Colour246 Color = "246"
-// 	Colour247 Color = "247"
-// 	Colour248 Color = "248"
-// 	Colour249 Color = "249"
-// 	Colour250 Color = "250"
-// 	Colour251 Color = "251"
-// 	Colour252 Color = "252"
-// 	Colour253 Color = "253"
-// 	Colour254 Color = "254"
-// 	Colour255 Color = "255"
+func init() {
+	// 256 Colors {{{
+	AddStyle("color0", NewStyle(WithForeground(New256Color(0, Foreground))))
+	AddStyle("color1", NewStyle(WithForeground(New256Color(1, Foreground))))
+	AddStyle("color2", NewStyle(WithForeground(New256Color(2, Foreground))))
+	AddStyle("color3", NewStyle(WithForeground(New256Color(3, Foreground))))
+	AddStyle("color4", NewStyle(WithForeground(New256Color(4, Foreground))))
+	AddStyle("color5", NewStyle(WithForeground(New256Color(5, Foreground))))
+	AddStyle("color6", NewStyle(WithForeground(New256Color(6, Foreground))))
+	AddStyle("color7", NewStyle(WithForeground(New256Color(7, Foreground))))
+	AddStyle("color8", NewStyle(WithForeground(New256Color(8, Foreground))))
+	AddStyle("color9", NewStyle(WithForeground(New256Color(9, Foreground))))
+	AddStyle("color10", NewStyle(WithForeground(New256Color(10, Foreground))))
+	AddStyle("color11", NewStyle(WithForeground(New256Color(11, Foreground))))
+	AddStyle("color12", NewStyle(WithForeground(New256Color(12, Foreground))))
+	AddStyle("color13", NewStyle(WithForeground(New256Color(13, Foreground))))
+	AddStyle("color14", NewStyle(WithForeground(New256Color(14, Foreground))))
+	AddStyle("color15", NewStyle(WithForeground(New256Color(15, Foreground))))
+	AddStyle("color16", NewStyle(WithForeground(New256Color(16, Foreground))))
+	AddStyle("color17", NewStyle(WithForeground(New256Color(17, Foreground))))
+	AddStyle("color18", NewStyle(WithForeground(New256Color(18, Foreground))))
+	AddStyle("color19", NewStyle(WithForeground(New256Color(19, Foreground))))
+	AddStyle("color20", NewStyle(WithForeground(New256Color(20, Foreground))))
+	AddStyle("color21", NewStyle(WithForeground(New256Color(21, Foreground))))
+	AddStyle("color22", NewStyle(WithForeground(New256Color(22, Foreground))))
+	AddStyle("color23", NewStyle(WithForeground(New256Color(23, Foreground))))
+	AddStyle("color24", NewStyle(WithForeground(New256Color(24, Foreground))))
+	AddStyle("color25", NewStyle(WithForeground(New256Color(25, Foreground))))
+	AddStyle("color26", NewStyle(WithForeground(New256Color(26, Foreground))))
+	AddStyle("color27", NewStyle(WithForeground(New256Color(27, Foreground))))
+	AddStyle("color28", NewStyle(WithForeground(New256Color(28, Foreground))))
+	AddStyle("color29", NewStyle(WithForeground(New256Color(29, Foreground))))
+	AddStyle("color30", NewStyle(WithForeground(New256Color(30, Foreground))))
+	AddStyle("color31", NewStyle(WithForeground(New256Color(31, Foreground))))
+	AddStyle("color32", NewStyle(WithForeground(New256Color(32, Foreground))))
+	AddStyle("color33", NewStyle(WithForeground(New256Color(33, Foreground))))
+	AddStyle("color34", NewStyle(WithForeground(New256Color(34, Foreground))))
+	AddStyle("color35", NewStyle(WithForeground(New256Color(35, Foreground))))
+	AddStyle("color36", NewStyle(WithForeground(New256Color(36, Foreground))))
+	AddStyle("color37", NewStyle(WithForeground(New256Color(37, Foreground))))
+	AddStyle("color38", NewStyle(WithForeground(New256Color(38, Foreground))))
+	AddStyle("color39", NewStyle(WithForeground(New256Color(39, Foreground))))
+	AddStyle("color40", NewStyle(WithForeground(New256Color(40, Foreground))))
+	AddStyle("color41", NewStyle(WithForeground(New256Color(41, Foreground))))
+	AddStyle("color42", NewStyle(WithForeground(New256Color(42, Foreground))))
+	AddStyle("color43", NewStyle(WithForeground(New256Color(43, Foreground))))
+	AddStyle("color44", NewStyle(WithForeground(New256Color(44, Foreground))))
+	AddStyle("color45", NewStyle(WithForeground(New256Color(45, Foreground))))
+	AddStyle("color46", NewStyle(WithForeground(New256Color(46, Foreground))))
+	AddStyle("color47", NewStyle(WithForeground(New256Color(47, Foreground))))
+	AddStyle("color48", NewStyle(WithForeground(New256Color(48, Foreground))))
+	AddStyle("color49", NewStyle(WithForeground(New256Color(49, Foreground))))
+	AddStyle("color50", NewStyle(WithForeground(New256Color(50, Foreground))))
+	AddStyle("color51", NewStyle(WithForeground(New256Color(51, Foreground))))
+	AddStyle("color52", NewStyle(WithForeground(New256Color(52, Foreground))))
+	AddStyle("color53", NewStyle(WithForeground(New256Color(53, Foreground))))
+	AddStyle("color54", NewStyle(WithForeground(New256Color(54, Foreground))))
+	AddStyle("color55", NewStyle(WithForeground(New256Color(55, Foreground))))
+	AddStyle("color56", NewStyle(WithForeground(New256Color(56, Foreground))))
+	AddStyle("color57", NewStyle(WithForeground(New256Color(57, Foreground))))
+	AddStyle("color58", NewStyle(WithForeground(New256Color(58, Foreground))))
+	AddStyle("color59", NewStyle(WithForeground(New256Color(59, Foreground))))
+	AddStyle("color60", NewStyle(WithForeground(New256Color(60, Foreground))))
+	AddStyle("color61", NewStyle(WithForeground(New256Color(61, Foreground))))
+	AddStyle("color62", NewStyle(WithForeground(New256Color(62, Foreground))))
+	AddStyle("color63", NewStyle(WithForeground(New256Color(63, Foreground))))
+	AddStyle("color64", NewStyle(WithForeground(New256Color(64, Foreground))))
+	AddStyle("color65", NewStyle(WithForeground(New256Color(65, Foreground))))
+	AddStyle("color66", NewStyle(WithForeground(New256Color(66, Foreground))))
+	AddStyle("color67", NewStyle(WithForeground(New256Color(67, Foreground))))
+	AddStyle("color68", NewStyle(WithForeground(New256Color(68, Foreground))))
+	AddStyle("color69", NewStyle(WithForeground(New256Color(69, Foreground))))
+	AddStyle("color70", NewStyle(WithForeground(New256Color(70, Foreground))))
+	AddStyle("color71", NewStyle(WithForeground(New256Color(71, Foreground))))
+	AddStyle("color72", NewStyle(WithForeground(New256Color(72, Foreground))))
+	AddStyle("color73", NewStyle(WithForeground(New256Color(73, Foreground))))
+	AddStyle("color74", NewStyle(WithForeground(New256Color(74, Foreground))))
+	AddStyle("color75", NewStyle(WithForeground(New256Color(75, Foreground))))
+	AddStyle("color76", NewStyle(WithForeground(New256Color(76, Foreground))))
+	AddStyle("color77", NewStyle(WithForeground(New256Color(77, Foreground))))
+	AddStyle("color78", NewStyle(WithForeground(New256Color(78, Foreground))))
+	AddStyle("color79", NewStyle(WithForeground(New256Color(79, Foreground))))
+	AddStyle("color80", NewStyle(WithForeground(New256Color(80, Foreground))))
+	AddStyle("color81", NewStyle(WithForeground(New256Color(81, Foreground))))
+	AddStyle("color82", NewStyle(WithForeground(New256Color(82, Foreground))))
+	AddStyle("color83", NewStyle(WithForeground(New256Color(83, Foreground))))
+	AddStyle("color84", NewStyle(WithForeground(New256Color(84, Foreground))))
+	AddStyle("color85", NewStyle(WithForeground(New256Color(85, Foreground))))
+	AddStyle("color86", NewStyle(WithForeground(New256Color(86, Foreground))))
+	AddStyle("color87", NewStyle(WithForeground(New256Color(87, Foreground))))
+	AddStyle("color88", NewStyle(WithForeground(New256Color(88, Foreground))))
+	AddStyle("color89", NewStyle(WithForeground(New256Color(89, Foreground))))
+	AddStyle("color90", NewStyle(WithForeground(New256Color(90, Foreground))))
+	AddStyle("color91", NewStyle(WithForeground(New256Color(91, Foreground))))
+	AddStyle("color92", NewStyle(WithForeground(New256Color(92, Foreground))))
+	AddStyle("color93", NewStyle(WithForeground(New256Color(93, Foreground))))
+	AddStyle("color94", NewStyle(WithForeground(New256Color(94, Foreground))))
+	AddStyle("color95", NewStyle(WithForeground(New256Color(95, Foreground))))
+	AddStyle("color96", NewStyle(WithForeground(New256Color(96, Foreground))))
+	AddStyle("color97", NewStyle(WithForeground(New256Color(97, Foreground))))
+	AddStyle("color98", NewStyle(WithForeground(New256Color(98, Foreground))))
+	AddStyle("color99", NewStyle(WithForeground(New256Color(99, Foreground))))
+	AddStyle("color100", NewStyle(WithForeground(New256Color(100, Foreground))))
+	AddStyle("color101", NewStyle(WithForeground(New256Color(101, Foreground))))
+	AddStyle("color102", NewStyle(WithForeground(New256Color(102, Foreground))))
+	AddStyle("color103", NewStyle(WithForeground(New256Color(103, Foreground))))
+	AddStyle("color104", NewStyle(WithForeground(New256Color(104, Foreground))))
+	AddStyle("color105", NewStyle(WithForeground(New256Color(105, Foreground))))
+	AddStyle("color106", NewStyle(WithForeground(New256Color(106, Foreground))))
+	AddStyle("color107", NewStyle(WithForeground(New256Color(107, Foreground))))
+	AddStyle("color108", NewStyle(WithForeground(New256Color(108, Foreground))))
+	AddStyle("color109", NewStyle(WithForeground(New256Color(109, Foreground))))
+	AddStyle("color110", NewStyle(WithForeground(New256Color(110, Foreground))))
+	AddStyle("color111", NewStyle(WithForeground(New256Color(111, Foreground))))
+	AddStyle("color112", NewStyle(WithForeground(New256Color(112, Foreground))))
+	AddStyle("color113", NewStyle(WithForeground(New256Color(113, Foreground))))
+	AddStyle("color114", NewStyle(WithForeground(New256Color(114, Foreground))))
+	AddStyle("color115", NewStyle(WithForeground(New256Color(115, Foreground))))
+	AddStyle("color116", NewStyle(WithForeground(New256Color(116, Foreground))))
+	AddStyle("color117", NewStyle(WithForeground(New256Color(117, Foreground))))
+	AddStyle("color118", NewStyle(WithForeground(New256Color(118, Foreground))))
+	AddStyle("color119", NewStyle(WithForeground(New256Color(119, Foreground))))
+	AddStyle("color120", NewStyle(WithForeground(New256Color(120, Foreground))))
+	AddStyle("color121", NewStyle(WithForeground(New256Color(121, Foreground))))
+	AddStyle("color122", NewStyle(WithForeground(New256Color(122, Foreground))))
+	AddStyle("color123", NewStyle(WithForeground(New256Color(123, Foreground))))
+	AddStyle("color124", NewStyle(WithForeground(New256Color(124, Foreground))))
+	AddStyle("color125", NewStyle(WithForeground(New256Color(125, Foreground))))
+	AddStyle("color126", NewStyle(WithForeground(New256Color(126, Foreground))))
+	AddStyle("color127", NewStyle(WithForeground(New256Color(127, Foreground))))
+	AddStyle("color128", NewStyle(WithForeground(New256Color(128, Foreground))))
+	AddStyle("color129", NewStyle(WithForeground(New256Color(129, Foreground))))
+	AddStyle("color130", NewStyle(WithForeground(New256Color(130, Foreground))))
+	AddStyle("color131", NewStyle(WithForeground(New256Color(131, Foreground))))
+	AddStyle("color132", NewStyle(WithForeground(New256Color(132, Foreground))))
+	AddStyle("color133", NewStyle(WithForeground(New256Color(133, Foreground))))
+	AddStyle("color134", NewStyle(WithForeground(New256Color(134, Foreground))))
+	AddStyle("color135", NewStyle(WithForeground(New256Color(135, Foreground))))
+	AddStyle("color136", NewStyle(WithForeground(New256Color(136, Foreground))))
+	AddStyle("color137", NewStyle(WithForeground(New256Color(137, Foreground))))
+	AddStyle("color138", NewStyle(WithForeground(New256Color(138, Foreground))))
+	AddStyle("color139", NewStyle(WithForeground(New256Color(139, Foreground))))
+	AddStyle("color140", NewStyle(WithForeground(New256Color(140, Foreground))))
+	AddStyle("color141", NewStyle(WithForeground(New256Color(141, Foreground))))
+	AddStyle("color142", NewStyle(WithForeground(New256Color(142, Foreground))))
+	AddStyle("color143", NewStyle(WithForeground(New256Color(143, Foreground))))
+	AddStyle("color144", NewStyle(WithForeground(New256Color(144, Foreground))))
+	AddStyle("color145", NewStyle(WithForeground(New256Color(145, Foreground))))
+	AddStyle("color146", NewStyle(WithForeground(New256Color(146, Foreground))))
+	AddStyle("color147", NewStyle(WithForeground(New256Color(147, Foreground))))
+	AddStyle("color148", NewStyle(WithForeground(New256Color(148, Foreground))))
+	AddStyle("color149", NewStyle(WithForeground(New256Color(149, Foreground))))
+	AddStyle("color150", NewStyle(WithForeground(New256Color(150, Foreground))))
+	AddStyle("color151", NewStyle(WithForeground(New256Color(151, Foreground))))
+	AddStyle("color152", NewStyle(WithForeground(New256Color(152, Foreground))))
+	AddStyle("color153", NewStyle(WithForeground(New256Color(153, Foreground))))
+	AddStyle("color154", NewStyle(WithForeground(New256Color(154, Foreground))))
+	AddStyle("color155", NewStyle(WithForeground(New256Color(155, Foreground))))
+	AddStyle("color156", NewStyle(WithForeground(New256Color(156, Foreground))))
+	AddStyle("color157", NewStyle(WithForeground(New256Color(157, Foreground))))
+	AddStyle("color158", NewStyle(WithForeground(New256Color(158, Foreground))))
+	AddStyle("color159", NewStyle(WithForeground(New256Color(159, Foreground))))
+	AddStyle("color160", NewStyle(WithForeground(New256Color(160, Foreground))))
+	AddStyle("color161", NewStyle(WithForeground(New256Color(161, Foreground))))
+	AddStyle("color162", NewStyle(WithForeground(New256Color(162, Foreground))))
+	AddStyle("color163", NewStyle(WithForeground(New256Color(163, Foreground))))
+	AddStyle("color164", NewStyle(WithForeground(New256Color(164, Foreground))))
+	AddStyle("color165", NewStyle(WithForeground(New256Color(165, Foreground))))
+	AddStyle("color166", NewStyle(WithForeground(New256Color(166, Foreground))))
+	AddStyle("color167", NewStyle(WithForeground(New256Color(167, Foreground))))
+	AddStyle("color168", NewStyle(WithForeground(New256Color(168, Foreground))))
+	AddStyle("color169", NewStyle(WithForeground(New256Color(169, Foreground))))
+	AddStyle("color170", NewStyle(WithForeground(New256Color(170, Foreground))))
+	AddStyle("color171", NewStyle(WithForeground(New256Color(171, Foreground))))
+	AddStyle("color172", NewStyle(WithForeground(New256Color(172, Foreground))))
+	AddStyle("color173", NewStyle(WithForeground(New256Color(173, Foreground))))
+	AddStyle("color174", NewStyle(WithForeground(New256Color(174, Foreground))))
+	AddStyle("color175", NewStyle(WithForeground(New256Color(175, Foreground))))
+	AddStyle("color176", NewStyle(WithForeground(New256Color(176, Foreground))))
+	AddStyle("color177", NewStyle(WithForeground(New256Color(177, Foreground))))
+	AddStyle("color178", NewStyle(WithForeground(New256Color(178, Foreground))))
+	AddStyle("color179", NewStyle(WithForeground(New256Color(179, Foreground))))
+	AddStyle("color180", NewStyle(WithForeground(New256Color(180, Foreground))))
+	AddStyle("color181", NewStyle(WithForeground(New256Color(181, Foreground))))
+	AddStyle("color182", NewStyle(WithForeground(New256Color(182, Foreground))))
+	AddStyle("color183", NewStyle(WithForeground(New256Color(183, Foreground))))
+	AddStyle("color184", NewStyle(WithForeground(New256Color(184, Foreground))))
+	AddStyle("color185", NewStyle(WithForeground(New256Color(185, Foreground))))
+	AddStyle("color186", NewStyle(WithForeground(New256Color(186, Foreground))))
+	AddStyle("color187", NewStyle(WithForeground(New256Color(187, Foreground))))
+	AddStyle("color188", NewStyle(WithForeground(New256Color(188, Foreground))))
+	AddStyle("color189", NewStyle(WithForeground(New256Color(189, Foreground))))
+	AddStyle("color190", NewStyle(WithForeground(New256Color(190, Foreground))))
+	AddStyle("color191", NewStyle(WithForeground(New256Color(191, Foreground))))
+	AddStyle("color192", NewStyle(WithForeground(New256Color(192, Foreground))))
+	AddStyle("color193", NewStyle(WithForeground(New256Color(193, Foreground))))
+	AddStyle("color194", NewStyle(WithForeground(New256Color(194, Foreground))))
+	AddStyle("color195", NewStyle(WithForeground(New256Color(195, Foreground))))
+	AddStyle("color196", NewStyle(WithForeground(New256Color(196, Foreground))))
+	AddStyle("color197", NewStyle(WithForeground(New256Color(197, Foreground))))
+	AddStyle("color198", NewStyle(WithForeground(New256Color(198, Foreground))))
+	AddStyle("color199", NewStyle(WithForeground(New256Color(199, Foreground))))
+	AddStyle("color200", NewStyle(WithForeground(New256Color(200, Foreground))))
+	AddStyle("color201", NewStyle(WithForeground(New256Color(201, Foreground))))
+	AddStyle("color202", NewStyle(WithForeground(New256Color(202, Foreground))))
+	AddStyle("color203", NewStyle(WithForeground(New256Color(203, Foreground))))
+	AddStyle("color204", NewStyle(WithForeground(New256Color(204, Foreground))))
+	AddStyle("color205", NewStyle(WithForeground(New256Color(205, Foreground))))
+	AddStyle("color206", NewStyle(WithForeground(New256Color(206, Foreground))))
+	AddStyle("color207", NewStyle(WithForeground(New256Color(207, Foreground))))
+	AddStyle("color208", NewStyle(WithForeground(New256Color(208, Foreground))))
+	AddStyle("color209", NewStyle(WithForeground(New256Color(209, Foreground))))
+	AddStyle("color210", NewStyle(WithForeground(New256Color(210, Foreground))))
+	AddStyle("color211", NewStyle(WithForeground(New256Color(211, Foreground))))
+	AddStyle("color212", NewStyle(WithForeground(New256Color(212, Foreground))))
+	AddStyle("color213", NewStyle(WithForeground(New256Color(213, Foreground))))
+	AddStyle("color214", NewStyle(WithForeground(New256Color(214, Foreground))))
+	AddStyle("color215", NewStyle(WithForeground(New256Color(215, Foreground))))
+	AddStyle("color216", NewStyle(WithForeground(New256Color(216, Foreground))))
+	AddStyle("color217", NewStyle(WithForeground(New256Color(217, Foreground))))
+	AddStyle("color218", NewStyle(WithForeground(New256Color(218, Foreground))))
+	AddStyle("color219", NewStyle(WithForeground(New256Color(219, Foreground))))
+	AddStyle("color220", NewStyle(WithForeground(New256Color(220, Foreground))))
+	AddStyle("color221", NewStyle(WithForeground(New256Color(221, Foreground))))
+	AddStyle("color222", NewStyle(WithForeground(New256Color(222, Foreground))))
+	AddStyle("color223", NewStyle(WithForeground(New256Color(223, Foreground))))
+	AddStyle("color224", NewStyle(WithForeground(New256Color(224, Foreground))))
+	AddStyle("color225", NewStyle(WithForeground(New256Color(225, Foreground))))
+	AddStyle("color226", NewStyle(WithForeground(New256Color(226, Foreground))))
+	AddStyle("color227", NewStyle(WithForeground(New256Color(227, Foreground))))
+	AddStyle("color228", NewStyle(WithForeground(New256Color(228, Foreground))))
+	AddStyle("color229", NewStyle(WithForeground(New256Color(229, Foreground))))
+	AddStyle("color230", NewStyle(WithForeground(New256Color(230, Foreground))))
+	AddStyle("color231", NewStyle(WithForeground(New256Color(231, Foreground))))
+	AddStyle("color232", NewStyle(WithForeground(New256Color(232, Foreground))))
+	AddStyle("color233", NewStyle(WithForeground(New256Color(233, Foreground))))
+	AddStyle("color234", NewStyle(WithForeground(New256Color(234, Foreground))))
+	AddStyle("color235", NewStyle(WithForeground(New256Color(235, Foreground))))
+	AddStyle("color236", NewStyle(WithForeground(New256Color(236, Foreground))))
+	AddStyle("color237", NewStyle(WithForeground(New256Color(237, Foreground))))
+	AddStyle("color238", NewStyle(WithForeground(New256Color(238, Foreground))))
+	AddStyle("color239", NewStyle(WithForeground(New256Color(239, Foreground))))
+	AddStyle("color240", NewStyle(WithForeground(New256Color(240, Foreground))))
+	AddStyle("color241", NewStyle(WithForeground(New256Color(241, Foreground))))
+	AddStyle("color242", NewStyle(WithForeground(New256Color(242, Foreground))))
+	AddStyle("color243", NewStyle(WithForeground(New256Color(243, Foreground))))
+	AddStyle("color244", NewStyle(WithForeground(New256Color(244, Foreground))))
+	AddStyle("color245", NewStyle(WithForeground(New256Color(245, Foreground))))
+	AddStyle("color246", NewStyle(WithForeground(New256Color(246, Foreground))))
+	AddStyle("color247", NewStyle(WithForeground(New256Color(247, Foreground))))
+	AddStyle("color248", NewStyle(WithForeground(New256Color(248, Foreground))))
+	AddStyle("color249", NewStyle(WithForeground(New256Color(249, Foreground))))
+	AddStyle("color250", NewStyle(WithForeground(New256Color(250, Foreground))))
+	AddStyle("color251", NewStyle(WithForeground(New256Color(251, Foreground))))
+	AddStyle("color252", NewStyle(WithForeground(New256Color(252, Foreground))))
+	AddStyle("color253", NewStyle(WithForeground(New256Color(253, Foreground))))
+	AddStyle("color254", NewStyle(WithForeground(New256Color(254, Foreground))))
+	AddStyle("color255", NewStyle(WithForeground(New256Color(255, Foreground))))
+	// }}}
 
-// 	// 256 Xterm colours Hexadecimal
-// 	HexColour0   Color = "#000000"
-// 	HexColour1   Color = "#800000"
-// 	HexColour2   Color = "#008000"
-// 	HexColour3   Color = "#808000"
-// 	HexColour4   Color = "#000080"
-// 	HexColour5   Color = "#800080"
-// 	HexColour6   Color = "#008080"
-// 	HexColour7   Color = "#c0c0c0"
-// 	HexColour8   Color = "#808080"
-// 	HexColour9   Color = "#ff0000"
-// 	HexColour10  Color = "#00ff00"
-// 	HexColour11  Color = "#ffff00"
-// 	HexColour12  Color = "#0000ff"
-// 	HexColour13  Color = "#ff00ff"
-// 	HexColour14  Color = "#00ffff"
-// 	HexColour15  Color = "#ffffff"
-// 	HexColour16  Color = "#000000"
-// 	HexColour17  Color = "#00005f"
-// 	HexColour18  Color = "#000087"
-// 	HexColour19  Color = "#0000af"
-// 	HexColour20  Color = "#0000d7"
-// 	HexColour21  Color = "#0000ff"
-// 	HexColour22  Color = "#005f00"
-// 	HexColour23  Color = "#005f5f"
-// 	HexColour24  Color = "#005f87"
-// 	HexColour25  Color = "#005faf"
-// 	HexColour26  Color = "#005fd7"
-// 	HexColour27  Color = "#005fff"
-// 	HexColour28  Color = "#008700"
-// 	HexColour29  Color = "#00875f"
-// 	HexColour30  Color = "#008787"
-// 	HexColour31  Color = "#0087af"
-// 	HexColour32  Color = "#0087d7"
-// 	HexColour33  Color = "#0087ff"
-// 	HexColour34  Color = "#00af00"
-// 	HexColour35  Color = "#00af5f"
-// 	HexColour36  Color = "#00af87"
-// 	HexColour37  Color = "#00afaf"
-// 	HexColour38  Color = "#00afd7"
-// 	HexColour39  Color = "#00afff"
-// 	HexColour40  Color = "#00d700"
-// 	HexColour41  Color = "#00d75f"
-// 	HexColour42  Color = "#00d787"
-// 	HexColour43  Color = "#00d7af"
-// 	HexColour44  Color = "#00d7d7"
-// 	HexColour45  Color = "#00d7ff"
-// 	HexColour46  Color = "#00ff00"
-// 	HexColour47  Color = "#00ff5f"
-// 	HexColour48  Color = "#00ff87"
-// 	HexColour49  Color = "#00ffaf"
-// 	HexColour50  Color = "#00ffd7"
-// 	HexColour51  Color = "#00ffff"
-// 	HexColour52  Color = "#5f0000"
-// 	HexColour53  Color = "#5f005f"
-// 	HexColour54  Color = "#5f0087"
-// 	HexColour55  Color = "#5f00af"
-// 	HexColour56  Color = "#5f00d7"
-// 	HexColour57  Color = "#5f00ff"
-// 	HexColour58  Color = "#5f5f00"
-// 	HexColour59  Color = "#5f5f5f"
-// 	HexColour60  Color = "#5f5f87"
-// 	HexColour61  Color = "#5f5faf"
-// 	HexColour62  Color = "#5f5fd7"
-// 	HexColour63  Color = "#5f5fff"
-// 	HexColour64  Color = "#5f8700"
-// 	HexColour65  Color = "#5f875f"
-// 	HexColour66  Color = "#5f8787"
-// 	HexColour67  Color = "#5f87af"
-// 	HexColour68  Color = "#5f87d7"
-// 	HexColour69  Color = "#5f87ff"
-// 	HexColour70  Color = "#5faf00"
-// 	HexColour71  Color = "#5faf5f"
-// 	HexColour72  Color = "#5faf87"
-// 	HexColour73  Color = "#5fafaf"
-// 	HexColour74  Color = "#5fafd7"
-// 	HexColour75  Color = "#5fafff"
-// 	HexColour76  Color = "#5fd700"
-// 	HexColour77  Color = "#5fd75f"
-// 	HexColour78  Color = "#5fd787"
-// 	HexColour79  Color = "#5fd7af"
-// 	HexColour80  Color = "#5fd7d7"
-// 	HexColour81  Color = "#5fd7ff"
-// 	HexColour82  Color = "#5fff00"
-// 	HexColour83  Color = "#5fff5f"
-// 	HexColour84  Color = "#5fff87"
-// 	HexColour85  Color = "#5fffaf"
-// 	HexColour86  Color = "#5fffd7"
-// 	HexColour87  Color = "#5fffff"
-// 	HexColour88  Color = "#870000"
-// 	HexColour89  Color = "#87005f"
-// 	HexColour90  Color = "#870087"
-// 	HexColour91  Color = "#8700af"
-// 	HexColour92  Color = "#8700d7"
-// 	HexColour93  Color = "#8700ff"
-// 	HexColour94  Color = "#875f00"
-// 	HexColour95  Color = "#875f5f"
-// 	HexColour96  Color = "#875f87"
-// 	HexColour97  Color = "#875faf"
-// 	HexColour98  Color = "#875fd7"
-// 	HexColour99  Color = "#875fff"
-// 	HexColour100 Color = "#878700"
-// 	HexColour101 Color = "#87875f"
-// 	HexColour102 Color = "#878787"
-// 	HexColour103 Color = "#8787af"
-// 	HexColour104 Color = "#8787d7"
-// 	HexColour105 Color = "#8787ff"
-// 	HexColour106 Color = "#87af00"
-// 	HexColour107 Color = "#87af5f"
-// 	HexColour108 Color = "#87af87"
-// 	HexColour109 Color = "#87afaf"
-// 	HexColour110 Color = "#87afd7"
-// 	HexColour111 Color = "#87afff"
-// 	HexColour112 Color = "#87d700"
-// 	HexColour113 Color = "#87d75f"
-// 	HexColour114 Color = "#87d787"
-// 	HexColour115 Color = "#87d7af"
-// 	HexColour116 Color = "#87d7d7"
-// 	HexColour117 Color = "#87d7ff"
-// 	HexColour118 Color = "#87ff00"
-// 	HexColour119 Color = "#87ff5f"
-// 	HexColour120 Color = "#87ff87"
-// 	HexColour121 Color = "#87ffaf"
-// 	HexColour122 Color = "#87ffd7"
-// 	HexColour123 Color = "#87ffff"
-// 	HexColour124 Color = "#af0000"
-// 	HexColour125 Color = "#af005f"
-// 	HexColour126 Color = "#af0087"
-// 	HexColour127 Color = "#af00af"
-// 	HexColour128 Color = "#af00d7"
-// 	HexColour129 Color = "#af00ff"
-// 	HexColour130 Color = "#af5f00"
-// 	HexColour131 Color = "#af5f5f"
-// 	HexColour132 Color = "#af5f87"
-// 	HexColour133 Color = "#af5faf"
-// 	HexColour134 Color = "#af5fd7"
-// 	HexColour135 Color = "#af5fff"
-// 	HexColour136 Color = "#af8700"
-// 	HexColour137 Color = "#af875f"
-// 	HexColour138 Color = "#af8787"
-// 	HexColour139 Color = "#af87af"
-// 	HexColour140 Color = "#af87d7"
-// 	HexColour141 Color = "#af87ff"
-// 	HexColour142 Color = "#afaf00"
-// 	HexColour143 Color = "#afaf5f"
-// 	HexColour144 Color = "#afaf87"
-// 	HexColour145 Color = "#afafaf"
-// 	HexColour146 Color = "#afafd7"
-// 	HexColour147 Color = "#afafff"
-// 	HexColour148 Color = "#afd700"
-// 	HexColour149 Color = "#afd75f"
-// 	HexColour150 Color = "#afd787"
-// 	HexColour151 Color = "#afd7af"
-// 	HexColour152 Color = "#afd7d7"
-// 	HexColour153 Color = "#afd7ff"
-// 	HexColour154 Color = "#afff00"
-// 	HexColour155 Color = "#afff5f"
-// 	HexColour156 Color = "#afff87"
-// 	HexColour157 Color = "#afffaf"
-// 	HexColour158 Color = "#afffd7"
-// 	HexColour159 Color = "#afffff"
-// 	HexColour160 Color = "#d70000"
-// 	HexColour161 Color = "#d7005f"
-// 	HexColour162 Color = "#d70087"
-// 	HexColour163 Color = "#d700af"
-// 	HexColour164 Color = "#d700d7"
-// 	HexColour165 Color = "#d700ff"
-// 	HexColour166 Color = "#d75f00"
-// 	HexColour167 Color = "#d75f5f"
-// 	HexColour168 Color = "#d75f87"
-// 	HexColour169 Color = "#d75faf"
-// 	HexColour170 Color = "#d75fd7"
-// 	HexColour171 Color = "#d75fff"
-// 	HexColour172 Color = "#d78700"
-// 	HexColour173 Color = "#d7875f"
-// 	HexColour174 Color = "#d78787"
-// 	HexColour175 Color = "#d787af"
-// 	HexColour176 Color = "#d787d7"
-// 	HexColour177 Color = "#d787ff"
-// 	HexColour178 Color = "#d7af00"
-// 	HexColour179 Color = "#d7af5f"
-// 	HexColour180 Color = "#d7af87"
-// 	HexColour181 Color = "#d7afaf"
-// 	HexColour182 Color = "#d7afd7"
-// 	HexColour183 Color = "#d7afff"
-// 	HexColour184 Color = "#d7d700"
-// 	HexColour185 Color = "#d7d75f"
-// 	HexColour186 Color = "#d7d787"
-// 	HexColour187 Color = "#d7d7af"
-// 	HexColour188 Color = "#d7d7d7"
-// 	HexColour189 Color = "#d7d7ff"
-// 	HexColour190 Color = "#d7ff00"
-// 	HexColour191 Color = "#d7ff5f"
-// 	HexColour192 Color = "#d7ff87"
-// 	HexColour193 Color = "#d7ffaf"
-// 	HexColour194 Color = "#d7ffd7"
-// 	HexColour195 Color = "#d7ffff"
-// 	HexColour196 Color = "#ff0000"
-// 	HexColour197 Color = "#ff005f"
-// 	HexColour198 Color = "#ff0087"
-// 	HexColour199 Color = "#ff00af"
-// 	HexColour200 Color = "#ff00d7"
-// 	HexColour201 Color = "#ff00ff"
-// 	HexColour202 Color = "#ff5f00"
-// 	HexColour203 Color = "#ff5f5f"
-// 	HexColour204 Color = "#ff5f87"
-// 	HexColour205 Color = "#ff5faf"
-// 	HexColour206 Color = "#ff5fd7"
-// 	HexColour207 Color = "#ff5fff"
-// 	HexColour208 Color = "#ff8700"
-// 	HexColour209 Color = "#ff875f"
-// 	HexColour210 Color = "#ff8787"
-// 	HexColour211 Color = "#ff87af"
-// 	HexColour212 Color = "#ff87d7"
-// 	HexColour213 Color = "#ff87ff"
-// 	HexColour214 Color = "#ffaf00"
-// 	HexColour215 Color = "#ffaf5f"
-// 	HexColour216 Color = "#ffaf87"
-// 	HexColour217 Color = "#ffafaf"
-// 	HexColour218 Color = "#ffafd7"
-// 	HexColour219 Color = "#ffafff"
-// 	HexColour220 Color = "#ffd700"
-// 	HexColour221 Color = "#ffd75f"
-// 	HexColour222 Color = "#ffd787"
-// 	HexColour223 Color = "#ffd7af"
-// 	HexColour224 Color = "#ffd7d7"
-// 	HexColour225 Color = "#ffd7ff"
-// 	HexColour226 Color = "#ffff00"
-// 	HexColour227 Color = "#ffff5f"
-// 	HexColour228 Color = "#ffff87"
-// 	HexColour229 Color = "#ffffaf"
-// 	HexColour230 Color = "#ffffd7"
-// 	HexColour231 Color = "#ffffff"
-// 	HexColour232 Color = "#080808"
-// 	HexColour233 Color = "#121212"
-// 	HexColour234 Color = "#1c1c1c"
-// 	HexColour235 Color = "#262626"
-// 	HexColour236 Color = "#303030"
-// 	HexColour237 Color = "#3a3a3a"
-// 	HexColour238 Color = "#444444"
-// 	HexColour239 Color = "#4e4e4e"
-// 	HexColour240 Color = "#585858"
-// 	HexColour241 Color = "#626262"
-// 	HexColour242 Color = "#6c6c6c"
-// 	HexColour243 Color = "#767676"
-// 	HexColour244 Color = "#808080"
-// 	HexColour245 Color = "#8a8a8a"
-// 	HexColour246 Color = "#949494"
-// 	HexColour247 Color = "#9e9e9e"
-// 	HexColour248 Color = "#a8a8a8"
-// 	HexColour249 Color = "#b2b2b2"
-// 	HexColour250 Color = "#bcbcbc"
-// 	HexColour251 Color = "#c6c6c6"
-// 	HexColour252 Color = "#d0d0d0"
-// 	HexColour253 Color = "#dadada"
-// 	HexColour254 Color = "#e4e4e4"
-// 	HexColour255 Color = "#eeeeee"
-// ) // }}}
-
-// // HTML Color Names
-// const ( // {{{
-// 	AliceBlue            Color = "#F0F8FF"
-// 	AntiqueWhite         Color = "#FAEBD7"
-// 	Aqua                 Color = "#00FFFF"
-// 	Aquamarine           Color = "#7FFFD4"
-// 	Azure                Color = "#F0FFFF"
-// 	Beige                Color = "#F5F5DC"
-// 	Bisque               Color = "#FFE4C4"
-// 	Black                Color = "#000000"
-// 	BlanchedAlmond       Color = "#FFEBCD"
-// 	Blue                 Color = "#0000FF"
-// 	BlueViolet           Color = "#8A2BE2"
-// 	Brown                Color = "#A52A2A"
-// 	BurlyWood            Color = "#DEB887"
-// 	CadetBlue            Color = "#5F9EA0"
-// 	Chartreuse           Color = "#7FFF00"
-// 	Chocolate            Color = "#D2691E"
-// 	Coral                Color = "#FF7F50"
-// 	CornflowerBlue       Color = "#6495ED"
-// 	Cornsilk             Color = "#FFF8DC"
-// 	Crimson              Color = "#DC143C"
-// 	Cyan                 Color = "#00FFFF"
-// 	DarkBlue             Color = "#00008B"
-// 	DarkCyan             Color = "#008B8B"
-// 	DarkGoldenRod        Color = "#B8860B"
-// 	DarkGray             Color = "#A9A9A9"
-// 	DarkGrey             Color = "#A9A9A9"
-// 	DarkGreen            Color = "#006400"
-// 	DarkKhaki            Color = "#BDB76B"
-// 	DarkMagenta          Color = "#8B008B"
-// 	DarkOliveGreen       Color = "#556B2F"
-// 	DarkOrange           Color = "#FF8C00"
-// 	DarkOrchid           Color = "#9932CC"
-// 	DarkRed              Color = "#8B0000"
-// 	DarkSalmon           Color = "#E9967A"
-// 	DarkSeaGreen         Color = "#8FBC8F"
-// 	DarkSlateBlue        Color = "#483D8B"
-// 	DarkSlateGray        Color = "#2F4F4F"
-// 	DarkSlateGrey        Color = "#2F4F4F"
-// 	DarkTurquoise        Color = "#00CED1"
-// 	DarkViolet           Color = "#9400D3"
-// 	DeepPink             Color = "#FF1493"
-// 	DeepSkyBlue          Color = "#00BFFF"
-// 	DimGray              Color = "#696969"
-// 	DimGrey              Color = "#696969"
-// 	DodgerBlue           Color = "#1E90FF"
-// 	FireBrick            Color = "#B22222"
-// 	FloralWhite          Color = "#FFFAF0"
-// 	ForestGreen          Color = "#228B22"
-// 	Fuchsia              Color = "#FF00FF"
-// 	Gainsboro            Color = "#DCDCDC"
-// 	GhostWhite           Color = "#F8F8FF"
-// 	Gold                 Color = "#FFD700"
-// 	GoldenRod            Color = "#DAA520"
-// 	Gray                 Color = "#808080"
-// 	Grey                 Color = "#808080"
-// 	Green                Color = "#008000"
-// 	GreenYellow          Color = "#ADFF2F"
-// 	HoneyDew             Color = "#F0FFF0"
-// 	HotPink              Color = "#FF69B4"
-// 	IndianRed            Color = "#CD5C5C"
-// 	Indigo               Color = "#4B0082"
-// 	Ivory                Color = "#FFFFF0"
-// 	Khaki                Color = "#F0E68C"
-// 	Lavender             Color = "#E6E6FA"
-// 	LavenderBlush        Color = "#FFF0F5"
-// 	LawnGreen            Color = "#7CFC00"
-// 	LemonChiffon         Color = "#FFFACD"
-// 	LightBlue            Color = "#ADD8E6"
-// 	LightCoral           Color = "#F08080"
-// 	LightCyan            Color = "#E0FFFF"
-// 	LightGoldenRodYellow Color = "#FAFAD2"
-// 	LightGray            Color = "#D3D3D3"
-// 	LightGrey            Color = "#D3D3D3"
-// 	LightGreen           Color = "#90EE90"
-// 	LightPink            Color = "#FFB6C1"
-// 	LightSalmon          Color = "#FFA07A"
-// 	LightSeaGreen        Color = "#20B2AA"
-// 	LightSkyBlue         Color = "#87CEFA"
-// 	LightSlateGray       Color = "#778899"
-// 	LightSlateGrey       Color = "#778899"
-// 	LightSteelBlue       Color = "#B0C4DE"
-// 	LightYellow          Color = "#FFFFE0"
-// 	Lime                 Color = "#00FF00"
-// 	LimeGreen            Color = "#32CD32"
-// 	Linen                Color = "#FAF0E6"
-// 	Magenta              Color = "#FF00FF"
-// 	Maroon               Color = "#800000"
-// 	MediumAquaMarine     Color = "#66CDAA"
-// 	MediumBlue           Color = "#0000CD"
-// 	MediumOrchid         Color = "#BA55D3"
-// 	MediumPurple         Color = "#9370DB"
-// 	MediumSeaGreen       Color = "#3CB371"
-// 	MediumSlateBlue      Color = "#7B68EE"
-// 	MediumSpringGreen    Color = "#00FA9A"
-// 	MediumTurquoise      Color = "#48D1CC"
-// 	MediumVioletRed      Color = "#C71585"
-// 	MidnightBlue         Color = "#191970"
-// 	MintCream            Color = "#F5FFFA"
-// 	MistyRose            Color = "#FFE4E1"
-// 	Moccasin             Color = "#FFE4B5"
-// 	NavajoWhite          Color = "#FFDEAD"
-// 	Navy                 Color = "#000080"
-// 	OldLace              Color = "#FDF5E6"
-// 	Olive                Color = "#808000"
-// 	OliveDrab            Color = "#6B8E23"
-// 	Orange               Color = "#FFA500"
-// 	OrangeRed            Color = "#FF4500"
-// 	Orchid               Color = "#DA70D6"
-// 	PaleGoldenRod        Color = "#EEE8AA"
-// 	PaleGreen            Color = "#98FB98"
-// 	PaleTurquoise        Color = "#AFEEEE"
-// 	PaleVioletRed        Color = "#DB7093"
-// 	PapayaWhip           Color = "#FFEFD5"
-// 	PeachPuff            Color = "#FFDAB9"
-// 	Peru                 Color = "#CD853F"
-// 	Pink                 Color = "#FFC0CB"
-// 	Plum                 Color = "#DDA0DD"
-// 	PowderBlue           Color = "#B0E0E6"
-// 	Purple               Color = "#800080"
-// 	RebeccaPurple        Color = "#663399"
-// 	Red                  Color = "#FF0000"
-// 	RosyBrown            Color = "#BC8F8F"
-// 	RoyalBlue            Color = "#4169E1"
-// 	SaddleBrown          Color = "#8B4513"
-// 	Salmon               Color = "#FA8072"
-// 	SandyBrown           Color = "#F4A460"
-// 	SeaGreen             Color = "#2E8B57"
-// 	SeaShell             Color = "#FFF5EE"
-// 	Sienna               Color = "#A0522D"
-// 	Silver               Color = "#C0C0C0"
-// 	SkyBlue              Color = "#87CEEB"
-// 	SlateBlue            Color = "#6A5ACD"
-// 	SlateGray            Color = "#708090"
-// 	SlateGrey            Color = "#708090"
-// 	Snow                 Color = "#FFFAFA"
-// 	SpringGreen          Color = "#00FF7F"
-// 	SteelBlue            Color = "#4682B4"
-// 	Tan                  Color = "#D2B48C"
-// 	Teal                 Color = "#008080"
-// 	Thistle              Color = "#D8BFD8"
-// 	Tomato               Color = "#FF6347"
-// 	Turquoise            Color = "#40E0D0"
-// 	Violet               Color = "#EE82EE"
-// 	Wheat                Color = "#F5DEB3"
-// 	White                Color = "#FFFFFF"
-// 	WhiteSmoke           Color = "#F5F5F5"
-// 	Yellow               Color = "#FFFF00"
-// 	YellowGreen          Color = "#9ACD32"
-// ) // }}}
+	// CSS Web Hexadecimal Colors {{{
+	AddStyle("aliceblue", NewStyle(WithForeground(NewHexColor("#f0f8ff", Foreground))))
+	AddStyle("antiquewhite", NewStyle(WithForeground(NewHexColor("#faebd7", Foreground))))
+	AddStyle("aqua", NewStyle(WithForeground(NewHexColor("#00ffff", Foreground))))
+	AddStyle("aquamarine", NewStyle(WithForeground(NewHexColor("#7fffd4", Foreground))))
+	AddStyle("azure", NewStyle(WithForeground(NewHexColor("#f0ffff", Foreground))))
+	AddStyle("beige", NewStyle(WithForeground(NewHexColor("#f5f5dc", Foreground))))
+	AddStyle("bisque", NewStyle(WithForeground(NewHexColor("#ffe4c4", Foreground))))
+	AddStyle("black", NewStyle(WithForeground(NewHexColor("#000000", Foreground))))
+	AddStyle("blanchedalmond", NewStyle(WithForeground(NewHexColor("#ffebcd", Foreground))))
+	AddStyle("blue", NewStyle(WithForeground(NewHexColor("#0000ff", Foreground))))
+	AddStyle("blueviolet", NewStyle(WithForeground(NewHexColor("#8a2be2", Foreground))))
+	AddStyle("brown", NewStyle(WithForeground(NewHexColor("#a52a2a", Foreground))))
+	AddStyle("burlywood", NewStyle(WithForeground(NewHexColor("#deb887", Foreground))))
+	AddStyle("cadetblue", NewStyle(WithForeground(NewHexColor("#5f9ea0", Foreground))))
+	AddStyle("chartreuse", NewStyle(WithForeground(NewHexColor("#7fff00", Foreground))))
+	AddStyle("chocolate", NewStyle(WithForeground(NewHexColor("#d2691e", Foreground))))
+	AddStyle("coral", NewStyle(WithForeground(NewHexColor("#ff7f50", Foreground))))
+	AddStyle("cornflowerblue", NewStyle(WithForeground(NewHexColor("#6495ed", Foreground))))
+	AddStyle("cornsilk", NewStyle(WithForeground(NewHexColor("#fff8dc", Foreground))))
+	AddStyle("crimson", NewStyle(WithForeground(NewHexColor("#dc143c", Foreground))))
+	AddStyle("cyan", NewStyle(WithForeground(NewHexColor("#00ffff", Foreground))))
+	AddStyle("darkblue", NewStyle(WithForeground(NewHexColor("#00008b", Foreground))))
+	AddStyle("darkcyan", NewStyle(WithForeground(NewHexColor("#008b8b", Foreground))))
+	AddStyle("darkgoldenrod", NewStyle(WithForeground(NewHexColor("#b8860b", Foreground))))
+	AddStyle("darkgray", NewStyle(WithForeground(NewHexColor("#a9a9a9", Foreground))))
+	AddStyle("darkgrey", NewStyle(WithForeground(NewHexColor("#a9a9a9", Foreground))))
+	AddStyle("darkgreen", NewStyle(WithForeground(NewHexColor("#006400", Foreground))))
+	AddStyle("darkkhaki", NewStyle(WithForeground(NewHexColor("#bdb76b", Foreground))))
+	AddStyle("darkmagenta", NewStyle(WithForeground(NewHexColor("#8b008b", Foreground))))
+	AddStyle("darkolivegreen", NewStyle(WithForeground(NewHexColor("#556b2f", Foreground))))
+	AddStyle("darkorange", NewStyle(WithForeground(NewHexColor("#ff8c00", Foreground))))
+	AddStyle("darkorchid", NewStyle(WithForeground(NewHexColor("#9932cc", Foreground))))
+	AddStyle("darkred", NewStyle(WithForeground(NewHexColor("#8b0000", Foreground))))
+	AddStyle("darksalmon", NewStyle(WithForeground(NewHexColor("#e9967a", Foreground))))
+	AddStyle("darkseagreen", NewStyle(WithForeground(NewHexColor("#8fbc8f", Foreground))))
+	AddStyle("darkslateblue", NewStyle(WithForeground(NewHexColor("#483d8b", Foreground))))
+	AddStyle("darkslategray", NewStyle(WithForeground(NewHexColor("#2f4f4f", Foreground))))
+	AddStyle("darkslategrey", NewStyle(WithForeground(NewHexColor("#2f4f4f", Foreground))))
+	AddStyle("darkturquoise", NewStyle(WithForeground(NewHexColor("#00ced1", Foreground))))
+	AddStyle("darkviolet", NewStyle(WithForeground(NewHexColor("#9400d3", Foreground))))
+	AddStyle("deeppink", NewStyle(WithForeground(NewHexColor("#ff1493", Foreground))))
+	AddStyle("deepskyblue", NewStyle(WithForeground(NewHexColor("#00bfff", Foreground))))
+	AddStyle("dimgray", NewStyle(WithForeground(NewHexColor("#696969", Foreground))))
+	AddStyle("dimgrey", NewStyle(WithForeground(NewHexColor("#696969", Foreground))))
+	AddStyle("dodgerblue", NewStyle(WithForeground(NewHexColor("#1e90ff", Foreground))))
+	AddStyle("firebrick", NewStyle(WithForeground(NewHexColor("#b22222", Foreground))))
+	AddStyle("floralwhite", NewStyle(WithForeground(NewHexColor("#fffaf0", Foreground))))
+	AddStyle("forestgreen", NewStyle(WithForeground(NewHexColor("#228b22", Foreground))))
+	AddStyle("fuchsia", NewStyle(WithForeground(NewHexColor("#ff00ff", Foreground))))
+	AddStyle("gainsboro", NewStyle(WithForeground(NewHexColor("#dcdcdc", Foreground))))
+	AddStyle("ghostwhite", NewStyle(WithForeground(NewHexColor("#f8f8ff", Foreground))))
+	AddStyle("gold", NewStyle(WithForeground(NewHexColor("#ffd700", Foreground))))
+	AddStyle("goldenrod", NewStyle(WithForeground(NewHexColor("#daa520", Foreground))))
+	AddStyle("gray", NewStyle(WithForeground(NewHexColor("#808080", Foreground))))
+	AddStyle("grey", NewStyle(WithForeground(NewHexColor("#808080", Foreground))))
+	AddStyle("green", NewStyle(WithForeground(NewHexColor("#008000", Foreground))))
+	AddStyle("greenyellow", NewStyle(WithForeground(NewHexColor("#adff2f", Foreground))))
+	AddStyle("honeydew", NewStyle(WithForeground(NewHexColor("#f0fff0", Foreground))))
+	AddStyle("hotpink", NewStyle(WithForeground(NewHexColor("#ff69b4", Foreground))))
+	AddStyle("indianred", NewStyle(WithForeground(NewHexColor("#cd5c5c", Foreground))))
+	AddStyle("indigo", NewStyle(WithForeground(NewHexColor("#4b0082", Foreground))))
+	AddStyle("ivory", NewStyle(WithForeground(NewHexColor("#fffff0", Foreground))))
+	AddStyle("khaki", NewStyle(WithForeground(NewHexColor("#f0e68c", Foreground))))
+	AddStyle("lavender", NewStyle(WithForeground(NewHexColor("#e6e6fa", Foreground))))
+	AddStyle("lavenderblush", NewStyle(WithForeground(NewHexColor("#fff0f5", Foreground))))
+	AddStyle("lawngreen", NewStyle(WithForeground(NewHexColor("#7cfc00", Foreground))))
+	AddStyle("lemonchiffon", NewStyle(WithForeground(NewHexColor("#fffacd", Foreground))))
+	AddStyle("lightblue", NewStyle(WithForeground(NewHexColor("#add8e6", Foreground))))
+	AddStyle("lightcoral", NewStyle(WithForeground(NewHexColor("#f08080", Foreground))))
+	AddStyle("lightcyan", NewStyle(WithForeground(NewHexColor("#e0ffff", Foreground))))
+	AddStyle("lightgoldenrodyellow", NewStyle(WithForeground(NewHexColor("#fafad2", Foreground))))
+	AddStyle("lightgray", NewStyle(WithForeground(NewHexColor("#d3d3d3", Foreground))))
+	AddStyle("lightgrey", NewStyle(WithForeground(NewHexColor("#d3d3d3", Foreground))))
+	AddStyle("lightgreen", NewStyle(WithForeground(NewHexColor("#90ee90", Foreground))))
+	AddStyle("lightpink", NewStyle(WithForeground(NewHexColor("#ffb6c1", Foreground))))
+	AddStyle("lightsalmon", NewStyle(WithForeground(NewHexColor("#ffa07a", Foreground))))
+	AddStyle("lightseagreen", NewStyle(WithForeground(NewHexColor("#20b2aa", Foreground))))
+	AddStyle("lightskyblue", NewStyle(WithForeground(NewHexColor("#87cefa", Foreground))))
+	AddStyle("lightslategray", NewStyle(WithForeground(NewHexColor("#778899", Foreground))))
+	AddStyle("lightslategrey", NewStyle(WithForeground(NewHexColor("#778899", Foreground))))
+	AddStyle("lightsteelblue", NewStyle(WithForeground(NewHexColor("#b0c4de", Foreground))))
+	AddStyle("lightyellow", NewStyle(WithForeground(NewHexColor("#ffffe0", Foreground))))
+	AddStyle("lime", NewStyle(WithForeground(NewHexColor("#00ff00", Foreground))))
+	AddStyle("limegreen", NewStyle(WithForeground(NewHexColor("#32cd32", Foreground))))
+	AddStyle("linen", NewStyle(WithForeground(NewHexColor("#faf0e6", Foreground))))
+	AddStyle("magenta", NewStyle(WithForeground(NewHexColor("#ff00ff", Foreground))))
+	AddStyle("maroon", NewStyle(WithForeground(NewHexColor("#800000", Foreground))))
+	AddStyle("mediumaquamarine", NewStyle(WithForeground(NewHexColor("#66cdaa", Foreground))))
+	AddStyle("mediumblue", NewStyle(WithForeground(NewHexColor("#0000cd", Foreground))))
+	AddStyle("mediumorchid", NewStyle(WithForeground(NewHexColor("#ba55d3", Foreground))))
+	AddStyle("mediumpurple", NewStyle(WithForeground(NewHexColor("#9370db", Foreground))))
+	AddStyle("mediumseagreen", NewStyle(WithForeground(NewHexColor("#3cb371", Foreground))))
+	AddStyle("mediumslateblue", NewStyle(WithForeground(NewHexColor("#7b68ee", Foreground))))
+	AddStyle("mediumspringgreen", NewStyle(WithForeground(NewHexColor("#00fa9a", Foreground))))
+	AddStyle("mediumturquoise", NewStyle(WithForeground(NewHexColor("#48d1cc", Foreground))))
+	AddStyle("mediumvioletred", NewStyle(WithForeground(NewHexColor("#c71585", Foreground))))
+	AddStyle("midnightblue", NewStyle(WithForeground(NewHexColor("#191970", Foreground))))
+	AddStyle("mintcream", NewStyle(WithForeground(NewHexColor("#f5fffa", Foreground))))
+	AddStyle("mistyrose", NewStyle(WithForeground(NewHexColor("#ffe4e1", Foreground))))
+	AddStyle("moccasin", NewStyle(WithForeground(NewHexColor("#ffe4b5", Foreground))))
+	AddStyle("navajowhite", NewStyle(WithForeground(NewHexColor("#ffdead", Foreground))))
+	AddStyle("navy", NewStyle(WithForeground(NewHexColor("#000080", Foreground))))
+	AddStyle("oldlace", NewStyle(WithForeground(NewHexColor("#fdf5e6", Foreground))))
+	AddStyle("olive", NewStyle(WithForeground(NewHexColor("#808000", Foreground))))
+	AddStyle("olivedrab", NewStyle(WithForeground(NewHexColor("#6b8e23", Foreground))))
+	AddStyle("orange", NewStyle(WithForeground(NewHexColor("#ffa500", Foreground))))
+	AddStyle("orangered", NewStyle(WithForeground(NewHexColor("#ff4500", Foreground))))
+	AddStyle("orchid", NewStyle(WithForeground(NewHexColor("#da70d6", Foreground))))
+	AddStyle("palegoldenrod", NewStyle(WithForeground(NewHexColor("#eee8aa", Foreground))))
+	AddStyle("palegreen", NewStyle(WithForeground(NewHexColor("#98fb98", Foreground))))
+	AddStyle("paleturquoise", NewStyle(WithForeground(NewHexColor("#afeeee", Foreground))))
+	AddStyle("palevioletred", NewStyle(WithForeground(NewHexColor("#db7093", Foreground))))
+	AddStyle("papayawhip", NewStyle(WithForeground(NewHexColor("#ffefd5", Foreground))))
+	AddStyle("peachpuff", NewStyle(WithForeground(NewHexColor("#ffdab9", Foreground))))
+	AddStyle("peru", NewStyle(WithForeground(NewHexColor("#cd853f", Foreground))))
+	AddStyle("pink", NewStyle(WithForeground(NewHexColor("#ffc0cb", Foreground))))
+	AddStyle("plum", NewStyle(WithForeground(NewHexColor("#dda0dd", Foreground))))
+	AddStyle("powderblue", NewStyle(WithForeground(NewHexColor("#b0e0e6", Foreground))))
+	AddStyle("purple", NewStyle(WithForeground(NewHexColor("#800080", Foreground))))
+	AddStyle("rebeccapurple", NewStyle(WithForeground(NewHexColor("#663399", Foreground))))
+	AddStyle("red", NewStyle(WithForeground(NewHexColor("#ff0000", Foreground))))
+	AddStyle("rosybrown", NewStyle(WithForeground(NewHexColor("#bc8f8f", Foreground))))
+	AddStyle("royalblue", NewStyle(WithForeground(NewHexColor("#4169e1", Foreground))))
+	AddStyle("saddlebrown", NewStyle(WithForeground(NewHexColor("#8b4513", Foreground))))
+	AddStyle("salmon", NewStyle(WithForeground(NewHexColor("#fa8072", Foreground))))
+	AddStyle("sandybrown", NewStyle(WithForeground(NewHexColor("#f4a460", Foreground))))
+	AddStyle("seagreen", NewStyle(WithForeground(NewHexColor("#2e8b57", Foreground))))
+	AddStyle("seashell", NewStyle(WithForeground(NewHexColor("#fff5ee", Foreground))))
+	AddStyle("sienna", NewStyle(WithForeground(NewHexColor("#a0522d", Foreground))))
+	AddStyle("silver", NewStyle(WithForeground(NewHexColor("#c0c0c0", Foreground))))
+	AddStyle("skyblue", NewStyle(WithForeground(NewHexColor("#87ceeb", Foreground))))
+	AddStyle("slateblue", NewStyle(WithForeground(NewHexColor("#6a5acd", Foreground))))
+	AddStyle("slategray", NewStyle(WithForeground(NewHexColor("#708090", Foreground))))
+	AddStyle("slategrey", NewStyle(WithForeground(NewHexColor("#708090", Foreground))))
+	AddStyle("snow", NewStyle(WithForeground(NewHexColor("#fffafa", Foreground))))
+	AddStyle("springgreen", NewStyle(WithForeground(NewHexColor("#00ff7f", Foreground))))
+	AddStyle("steelblue", NewStyle(WithForeground(NewHexColor("#4682b4", Foreground))))
+	AddStyle("tan", NewStyle(WithForeground(NewHexColor("#d2b48c", Foreground))))
+	AddStyle("teal", NewStyle(WithForeground(NewHexColor("#008080", Foreground))))
+	AddStyle("thistle", NewStyle(WithForeground(NewHexColor("#d8bfd8", Foreground))))
+	AddStyle("tomato", NewStyle(WithForeground(NewHexColor("#ff6347", Foreground))))
+	AddStyle("turquoise", NewStyle(WithForeground(NewHexColor("#40e0d0", Foreground))))
+	AddStyle("violet", NewStyle(WithForeground(NewHexColor("#ee82ee", Foreground))))
+	AddStyle("wheat", NewStyle(WithForeground(NewHexColor("#f5deb3", Foreground))))
+	AddStyle("white", NewStyle(WithForeground(NewHexColor("#ffffff", Foreground))))
+	AddStyle("whitesmoke", NewStyle(WithForeground(NewHexColor("#f5f5f5", Foreground))))
+	AddStyle("yellow", NewStyle(WithForeground(NewHexColor("#ffff00", Foreground))))
+	AddStyle("yellowgreen", NewStyle(WithForeground(NewHexColor("#9acd32", Foreground))))
+	// }}}
+}
 
 func ColorOn() {
 	showColor = true
@@ -700,4 +442,3 @@ func ColorOff() {
 func IsColor() bool {
 	return showColor
 }
-
